@@ -1,16 +1,66 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Poppins, Outfit } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import Topbar from "@/components/navbar/topbar";
+import localFont from "next/font/local";
+import Navbar from "@/components/navbar/navbar";
+import Footer from "@/components/footer/footer";
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
+
+const gotham = localFont({
+  src: [
+    { path: "../public/fonts/Gotham/Gotham-Thin.otf", weight: "100", style: "normal" },
+    { path: "../public/fonts/Gotham/Gotham-ThinItalic.otf", weight: "100", style: "italic" },
+
+    { path: "../public/fonts/Gotham/Gotham-XLight.otf", weight: "200", style: "normal" },
+    { path: "../public/fonts/Gotham/Gotham-XLightItalic.otf", weight: "200", style: "italic" },
+
+    { path: "../public/fonts/Gotham/Gotham-Light.otf", weight: "300", style: "normal" },
+    { path: "../public/fonts/Gotham/Gotham-LightItalic.otf", weight: "300", style: "italic" },
+
+    { path: "../public/fonts/Gotham/Gotham-Book.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/Gotham/Gotham-BookItalic.otf", weight: "400", style: "italic" },
+
+    { path: "../public/fonts/Gotham/Gotham-Medium.otf", weight: "500", style: "normal" },
+    { path: "../public/fonts/Gotham/Gotham-MediumItalic.otf", weight: "500", style: "italic" },
+
+    { path: "../public/fonts/Gotham/Gotham-Bold.otf", weight: "700", style: "normal" },
+    { path: "../public/fonts/Gotham/Gotham-BoldItalic.otf", weight: "700", style: "italic" },
+
+    { path: "../public/fonts/Gotham/Gotham-Black.otf", weight: "900", style: "normal" },
+    { path: "../public/fonts/Gotham/Gotham-BlackItalic.otf", weight: "900", style: "italic" },
+  ],
+  variable: "--font-gotham",
+  display: "swap",
+});
+
+const grobold = localFont({
+  src: [
+    { path: "../public/fonts/GROBOLD.ttf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-grobold",
+  display: "swap",
+});
+
+
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +75,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={cn("h-full", "antialiased", poppins.variable, "font-sans", inter.variable, gotham.variable, outfit.variable, grobold.variable)}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Topbar />
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
