@@ -59,12 +59,12 @@ function WhyZipgolf({ }: Props) {
             <Image fill src={'/image/whyBg.png'} alt='whybg' className='object-cover object-center' />
             <div className='absolute top-0 left-0 w-full h-full bg-black opacity-60' />
             <div className='relative w-full'>
-                <div className='flex items-end justify-center w-full'>
+                <div className='flex items-end justify-center w-full' data-aos="fade-in">
                     <Image width={29.42} height={59.35} src={'/image/flashIcon.svg'} alt='icon' className='mr-[22px]' />
-                    <h2 className='font-gotham font-bold text-[40px] leading-[40px] text-center uppercase text-white'>why <span className='text-[#5EF700]'>zipgolf</span></h2>
+                    <h2 className='font-gotham font-bold text-[40px] leading-[40px] text-center uppercase text-white'>why <span className='text-[#5EF700]'>ZIPGOLF</span></h2>
                     <Image width={87} height={65.5} alt='logo' src={'/image/subheading-logo.png'} className='object-bottom object-contain -ml-[15px]' />
                 </div>
-                <div className="relative flex w-full flex-col items-center justify-center overflow-hidden pt-[37px] gap-[37px]">
+                <div className="relative flex w-full flex-col items-center justify-center overflow-hidden pt-[37px] gap-[37px]" data-aos="fade-in">
 
                     <Marquee pauseOnHover className="[--duration:50s] !gap-[30px]">
                         {features.slice(0,3).map((data, i) => (

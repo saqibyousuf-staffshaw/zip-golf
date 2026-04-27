@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../container/container'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,6 +22,7 @@ type Props = {}
 
 function Navbar({ }: Props) {
     const [drawer, setDrawer] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
     const routes = [
         {
             name: "home",
@@ -29,7 +30,7 @@ function Navbar({ }: Props) {
 
         },
         {
-            name: "about zipgolf",
+            name: "about ZIPGOLF",
             dropdown: false,
 
         },
@@ -69,12 +70,21 @@ function Navbar({ }: Props) {
 
         }
     ]
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50) // adjust threshold if needed
+        }
+
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
     return (
-        <div className='bg-[#000000] sticky top-0 z-50 w-full'>
+        <div className={`sticky top-0 z-50 w-full transition-colors duration-300 ${scrolled ? "bg-white" : "bg-black"
+            }`}>
             <Container>
                 <div className='flex justify-between items-center'>
                     <div>
-                        <Image width={114.04} height={83.89} alt='logo' src={'/image/logo.png'} />
+                        <Image width={114.04} height={83.89} alt='logo' src={'/image/logo-new.png'} />
                     </div>
                     <div className='flex items-center gap-7'>
                         <div className='xl:flex items-center hidden'>
@@ -83,7 +93,8 @@ function Navbar({ }: Props) {
                                     {i > 0 ?
                                         <Dot color='#5EF700' />
                                         : null}
-                                    <Link href={"#"} className='font-poppins font-medium text-sm leading-none capitalize text-white'>
+                                    <Link href={"#"} className={`font-poppins font-medium text-sm leading-none capitalize ${scrolled ? "text-black" : "text-white"
+                                        }`}>
                                         {a.name}
                                     </Link>
                                 </>
@@ -91,25 +102,28 @@ function Navbar({ }: Props) {
                         </div>
                         <div className='flex items-center gap-2.5'>
                             <div className='flex items-center gap-[5px]'>
-                                <button className='xl:hidden' onClick={() => {
+                                <button className={`${scrolled ? "text-black" : "text-white"} xl:hidden`} onClick={() => {
                                     setDrawer(true)
                                 }}>
-                                    <RxHamburgerMenu color='white' size={24} />
+                                    <RxHamburgerMenu  size={24} className={`${scrolled ? "!text-black" : "text-white"}`}/>
                                 </button>
 
-                                <button>
-                                    <FiSearch color='white' size={24} />
+                                <button >
+                                    <FiSearch color='white' size={24} className={`${scrolled ? "!text-black" : "text-white"}`} />
+                                </button>
+                                <button >
+                                    <HiOutlineUserCircle color='white' size={24} className={`${scrolled ? "!text-black" : "text-white"}`}/>
                                 </button>
                                 <button>
-                                    <HiOutlineUserCircle color='white' size={24} />
-                                </button>
-                                <button>
-                                    <MdOutlineShoppingCart color='white' size={24} />
+                                    <Image height={40} width={40} alt='zipgolf' src={'/image/logo.png'} />
+                                    {/* <MdOutlineShoppingCart color='white' size={24} /> */}
                                 </button>
                             </div>
-                            <button className='bg-[#F6F600] font-outfit font-bold sm:text-sm text-xs leading-none capitalize py-2.5 sm:px-6 px-3'>
-                                play zipgolf
-                            </button>
+                            <Link href="/#searchBooking">
+                                <button className='bg-[#F6F600] font-outfit font-bold sm:text-sm text-xs leading-none capitalize py-2.5 sm:px-6 px-3 cursor-pointer'>
+                                    play ZIPGOLF
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -119,7 +133,7 @@ function Navbar({ }: Props) {
                     <SheetHeader className='flex flex-col justify-between h-full'>
                         <div>
                             <div>
-                                <Image width={114.04} height={83.89} alt='logo' src={'/image/logo.png'} />
+                                <Image width={114.04} height={83.89} alt='logo' src={'/image/logo-new.png'} />
                             </div>
                             <div className='flex flex-col gap-6 mt-10'>
                                 {routes.map((a, i) => (
@@ -132,7 +146,7 @@ function Navbar({ }: Props) {
                             </div>
                         </div>
                         <button className='bg-[#F6F600] font-outfit font-bold text-sm leading-none capitalize py-2.5 px-6'>
-                            play zipgolf
+                            play ZIPGOLF
                         </button>
                     </SheetHeader>
                 </SheetContent>

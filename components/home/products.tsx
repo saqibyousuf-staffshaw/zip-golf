@@ -14,25 +14,25 @@ type Props = {}
 
 const products = [
     {
-        Image: "/image/GolfChase14Bag.png",
-        name: "Golf Chase 14 Bag",
-        category: "Golf bag",
+        Image: "/image/tshirt1.png",
+        name: "T-Polo",
+        category: "Shirt",
         rating: 4,
         oldPrice: "230.00",
         newPrice: "200.00"
     },
     {
-        Image: "/image/golfSet.png",
-        name: "Golf Club Set",
-        category: "Golf Clubs Complete Sets",
+        Image: "/image/cap.png",
+        name: "Cap",
+        category: "Cap",
         rating: 4,
         oldPrice: "230.00",
         newPrice: "200.00"
     },
     {
-        Image: "/image/golfclub.png",
-        name: "Golf Club",
-        category: "Golf Club",
+        Image: "/image/tshirt2.png",
+        name: "T-shirt",
+        category: "Shirt",
         rating: 4,
         oldPrice: "230.00",
         newPrice: "200.00"
@@ -41,28 +41,28 @@ const products = [
 
 const ProdcutCard = ({ data, index }: any) => {
     return (
-        <div className='w-full'>
+        <div className='w-full' >
             <div className='aspect-[337/306] w-full relative flex items-center justify-center pt-[32px] overflow-hidden'>
                 {(index + 1) % 2 === 0 ?
                     <div className='w-full h-full productBg absolute rounded-[30px]' />
                     :
                     <div className='w-[196.12] h-[272.77] productCutBg absolute' />
                 }
-                <Image width={297} height={306} src={data.Image} alt='GolfChase14Bag.png' className='h-full w-full relative object-contain object-center' />
+                <Image width={297} height={306} src={data.Image} alt='GolfChase14Bag.png' className='h-full w-full relative object-contain object-center' data-aos="zoom-in"/>
             </div>
             <div className='flex flex-col gap-1.5 items-center mt-[17px]'>
                 <div>
-                    <h5 className='font-gotham font-bold text-[20px] tracking-[0.05em] text-center capitalize'>{data.name}</h5>
-                    <p className='font-poppins font-medium text-xs  tracking-[0.05em] text-center capitalize'>{data.category}</p>
+                    <h5 className='font-gotham font-bold text-[20px] tracking-[0.05em] text-center capitalize' data-aos="fade-in">{data.name}</h5>
+                    <p className='font-poppins font-medium text-xs  tracking-[0.05em] text-center capitalize' data-aos="fade-in">{data.category}</p>
                 </div>
-                <div className='flex justify-center gap-2'>
+                <div className='flex justify-center gap-2' data-aos="fade-in">
                     <Star size={20} fill='#FFD122' stroke='#FFD122' />
                     <Star size={20} fill='#FFD122' stroke='#FFD122' />
                     <Star size={20} fill='#FFD122' stroke='#FFD122' />
                     <Star size={20} fill='#FFD122' stroke='#FFD122' />
                     <Star size={20} fill="#939393" stroke="#939393" />
                 </div>
-                <div className='flex justify-center gap-0.5'>
+                <div className='flex justify-center gap-0.5' data-aos="fade-in">
                     <p className='font-poppins font-medium text-base leading-[22px] tracking-[0.05em] text-center capitalize text-[#939393]'>$230.00 </p>
                     <p className='font-poppins font-medium text-base leading-[22px] tracking-[0.05em] text-center capitalize text-[#000000]'>$200.00</p>
                 </div>
@@ -73,10 +73,10 @@ const ProdcutCard = ({ data, index }: any) => {
 
 function Products({ }: Props) {
     return (
-        <div className='pt-[110px] pb-[87px]'>
+        <div className='pt-[110px] pb-[87px]' id="shop">
             <Container className='!max-w-[1147px]'>
                 <div className='grid gap-2 flex flex-col items-center gap-[7px]'>
-                    <h2 className='font-gotham font-bold text-[40px] leading-[40px] text-center uppercase'>our best <span className='bg-[linear-gradient(90deg,#000000_-19.52%,#5EF700_100%)] bg-clip-text text-transparent'>product</span> </h2>
+                    <h2 className='font-gotham font-bold text-[40px] leading-[40px] text-center uppercase'>Pro <span className='bg-[linear-gradient(90deg,#000000_-19.52%,#5EF700_100%)] bg-clip-text text-transparent'>Shop</span> </h2>
                     <p className='font-poppins font-medium text-lg leading-[22px] tracking-[0.05em] text-center capitalize'>Lorem Ipsum is <span className='font-grobold text-lg leading-[22px] tracking-[0.05em] text-center capitalize text-[#399401]'>simply dummy</span> text of the printing.</p>
                 </div>
                 <div className='grid grid-cols-3 w-full gap-[55.55px] mt-[55px] max-sm:hidden'>

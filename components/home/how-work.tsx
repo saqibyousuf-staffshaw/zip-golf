@@ -7,13 +7,13 @@ type Props = {}
 const steps = [
     {
         title: <>get your <span className='text-[#F6F600]'>zipcard</span></>,
-        desc: <>sign up in seconds and unlock your <b>zipgolf</b> experience</>,
+        desc: <>sign up in seconds and unlock your <b>ZIPGOLF</b> experience</>,
         image: '/image/zipgolfcard.png'
     },
     {
         title: <>play with <span className='text-[#F6F600]'>3 balls</span></>,
         desc: <>every shot includes <b>3</b> balls for faster play and more fun</>,
-        image: '/image/3ballsimage.png'
+        image: '/image/3ballsimage-new.png'
     },
     {
         title: <>play <span className='text-[#F6F600]'>fast play smart</span></>,
@@ -22,27 +22,27 @@ const steps = [
     },
     {
         title: <>earn & <span className='text-[#F6F600]'>redeen point</span></>,
-        desc: <>collect <b>zippoints</b> and use them at any <b>zipgolf</b> location </>,
+        desc: <>collect <b>zippoints</b> and use them at any <b>ZIPGOLF</b> location </>,
         image: '/image/points.png'
     }
 ]
 
 function HowWork({ }: Props) {
     return (
-        <div className='py-[90px] relative'>
+        <div className='py-[90px] relative mt-32'>
             <Image fill src={'/image/howWorkBg.png'} alt='howWorkBg.png' className='object-cover object-bottom' />
             <div className='bg-[#00000080] absolute w-full h-full top-0 left-0' />
             <Container className='relative'>
                 <div>
                     <div className='max-w-[649px] grid gap-3 relative mb-[100px]'>
-                        <Image width={345.77} height={260.29} src={'/image/logoWithFace.png'} alt='subheading-logo' className='object-contain absolute lg:left-[100%] left-[85%] top-[50%] -translate-y-1/2 max-lg:w-[200px] max-lg:h-[200px] max-sm:hidden' />
-                        <h2 className='font-gotham relative font-bold text-[50px] leading-[40px] uppercase text-white'>how <span className='text-[#F6F600]'>zipgolf</span> works</h2>
-                        <p className='text-white relative font-poppins font-normal text-base  tracking-[0.05em] capitalize' >Lorem Ipsum is <span className='font-grobold  text-[#5EF700]'> simply dummy </span> text of the printing and typesetting industry. Lorem Ipsum has been the industry's Lorem Ipsum is <span className='font-grobold  text-[#5EF700]'> simply dummy</span> text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
+                        <Image width={345.77} height={260.29} src={'/image/logoWithFace.png'} alt='subheading-logo' className='object-contain absolute lg:left-[100%] left-[85%] top-[50%] -translate-y-1/2 max-lg:w-[200px] max-lg:h-[200px] max-sm:hidden' data-aos="zoom-in"/>
+                        <h2 className='font-gotham relative font-bold text-[50px] leading-[40px] uppercase text-white' data-aos="fade-right">how <span className='text-[#F6F600]'>ZIPGOLF</span> works</h2>
+                        <p className='text-white relative font-poppins font-normal text-base  tracking-[0.05em] capitalize'  data-aos="fade-right">Lorem Ipsum is <span className='font-grobold  text-[#5EF700]'> simply dummy </span> text of the printing and typesetting industry. Lorem Ipsum has been the industry's Lorem Ipsum is <span className='font-grobold  text-[#5EF700]'> simply dummy</span> text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
                     </div>
                     <div className='w-full grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-[18px]'>
                         {steps?.map((a, i) => {
                             return (
-                                <div className='flex flex-col h-full' key={i}>
+                                <div className='flex flex-col h-full' key={i}  data-aos="fade-right">
                                     <div className='flex items-center z-10 relative '>
                                         <div className='font-gotham font-bold text-[23px] leading-[68px] tracking-[0.05em] capitalize text-[#F6F600] w-[74px] h-[74px] rounded-full border border-[#5EF700] bg-[#FFFFFF33] flex items-center justify-center backdrop-blur-[20px]'>
                                             Z{i+1}
