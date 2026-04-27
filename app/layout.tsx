@@ -6,6 +6,8 @@ import Topbar from "@/components/navbar/topbar";
 import localFont from "next/font/local";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
+// @ts-ignore
+import ScrollGif from "@/components/zipper/zipper";
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const poppins = Poppins({
@@ -78,6 +80,7 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", poppins.variable, "font-sans", inter.variable, gotham.variable, outfit.variable, grobold.variable)}
     >
       <body className="min-h-full flex flex-col">
+        <ScrollGif />
         <Topbar />
         <Navbar />
         {children}
