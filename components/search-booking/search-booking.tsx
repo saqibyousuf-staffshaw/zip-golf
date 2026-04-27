@@ -45,7 +45,7 @@ function SearchBooking({ }: Props) {
     }
     const timeSlots = generateTimeSlots()
     return (
-        <div className='max-w-[1149px] overflow-hidden w-full mx-auto shadow-[5px_5px_55px_0px_#000000] lg:mt-[-45px] relative bg-white'>
+        <div className='max-w-[1149px] overflow-hidden w-full mx-auto shadow-[5px_5px_55px_0px_#000000] lg:mb-[-45px] relative bg-white z-10 mt-20' id="searchBooking">
             <div className='flex justify-between items-center max-sm:flex-col max-lg:gap-6'>
                 <div className='relative lg:max-w-[513px] lg:w-full sm:basis-1/2 basis-full h-full'>
                     <div className='relative w-full lg:py-[35px] sm:px-[60px] max-sm:p-6'>

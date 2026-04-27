@@ -13,16 +13,16 @@ function Future({ }: Props) {
         <div className='w-full'>
           <div className='flex flex-col items-center gap-2'>
             <div className='flex items-end'>
-              <h4 className='font-gotham font-bold text-[25px] leading-none text-center uppercase bg-[linear-gradient(to_bottom,#5EF700_-5.56%,#000000_122.45%)] bg-clip-text text-transparent drop-shadow-[2px_2px_0px_#00000040] mb-[10px]'>what is zipgolf</h4>
-              <Image width={87} height={65.5} alt='logo' src={'/image/subheading-logo.png'} className='object-bottom object-contain -ml-[15px]' />
+              <h4 className='font-gotham font-bold text-[25px] leading-none text-center uppercase bg-[linear-gradient(to_bottom,#5EF700_-5.56%,#000000_122.45%)] bg-clip-text text-transparent drop-shadow-[2px_2px_0px_#00000040] mb-[10px]' data-aos="fade-up">what is ZIPGOLF</h4>
+              <Image width={87} height={65.5} alt='logo' src={'/image/subheading-logo.png'} className='object-bottom object-contain -ml-[15px]' data-aos="zoom-in"/>
             </div>
-            <h2 className='font-gotham font-bold text-[40px] leading-[40px] text-center uppercase'>the future of <span className='bg-[linear-gradient(90deg,#000000_-19.52%,#5EF700_100%)] bg-clip-text text-transparent'>fast golf</span> </h2>
+            <h2 className='font-gotham font-bold text-[40px] leading-[40px] text-center uppercase' data-aos="fade-up">the future of <span className='bg-[linear-gradient(90deg,#000000_-19.52%,#5EF700_100%)] bg-clip-text text-transparent'>fast golf</span> </h2>
           </div>
           <div className='w-full relative flex flex-col items-center'>
             <Image width={655} height={473} alt='logo' src={'/image/background-logo.png'} className='object-contain object-top absolute top-0 aspect-square ' />
             <div className='grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5 pt-[50px]'>
-              <div className='w-full aspect-[304.18/407.39] relative flex flex-col justify-end'>
-                <Image fill alt="3balls" src={'/image/3balls.jpg'} />
+              <div className='w-full aspect-[304.18/407.39] relative flex flex-col justify-end' data-aos="fade-right">
+                <Image fill alt="3balls" src={'/image/3balls-new-3.jpg'} className='object-cover object-center'/>
                 <div className='absolute top-0 left-0 w-full h-full bg-black opacity-40' />
                 <div className='relative px-[19px] py-[23px] grid gap-3'>
                   <h4 className='font-gotham font-bold text-[30px] leading-[40px]  uppercase text-[#5EF700]'>3 balls</h4>
@@ -34,7 +34,7 @@ function Future({ }: Props) {
                   </Link>
                 </div>
               </div>
-              <div className='w-full aspect-[304.18/407.39] relative flex flex-col justify-start'>
+              <div className='w-full aspect-[304.18/407.39] relative flex flex-col justify-start' data-aos="fade-right">
                 <Image fill alt="fastplay" src={'/image/freeplay.jpg'} />
                 <div className='absolute top-0 left-0 w-full h-full bg-black opacity-40' />
                 <div className='relative px-[19px] py-[23px] grid gap-3'>
@@ -47,7 +47,7 @@ function Future({ }: Props) {
                   </Link>
                 </div>
               </div>
-              <div className='w-full aspect-[304.18/407.39] relative flex flex-col justify-end'>
+              <div className='w-full aspect-[304.18/407.39] relative flex flex-col justify-end' data-aos="fade-right">
                 <Image fill alt="familygolf" src={'/image/familygolf.jpg'} />
                 <div className='absolute top-0 left-0 w-full h-full bg-black opacity-40' />
                 <div className='relative px-[19px] py-[23px] grid gap-3'>
@@ -60,8 +60,8 @@ function Future({ }: Props) {
                   </Link>
                 </div>
               </div>
-              <div className='w-full aspect-[304.18/407.39] relative flex flex-col justify-start'>
-                <Image fill alt="modernpractice" src={'/image/modernpractice.jpg'} />
+              <div className='w-full aspect-[304.18/407.39] relative flex flex-col justify-start' data-aos="fade-right">
+                <Image fill alt="modernpractice" src={'/image/modernpractice-new.jpg'} className='object-cover object-center'/>
                 <div className='absolute top-0 left-0 w-full h-full bg-black opacity-40' />
                 <div className='relative px-[19px] py-[23px] grid gap-3'>
                   <h4 className='font-gotham font-bold text-[30px] leading-[40px]  uppercase text-[#5EF700]'>Modren practice</h4>

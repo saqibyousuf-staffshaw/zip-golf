@@ -6,6 +6,7 @@ import Membership from "@/components/home/membership";
 import Playanytime from "@/components/home/playanytime";
 import Products from "@/components/home/products";
 import WhyZipgolf from "@/components/home/why-zipgolf";
+import SearchBooking from "@/components/search-booking/search-booking";
 import Image from "next/image";
 
 export default function Home() {
@@ -13,12 +14,13 @@ export default function Home() {
     <>
       <Hero />
       <Future />
-      <WhyZipgolf />
       <Products />
+      <WhyZipgolf />
       <HowWork />
       <Playanytime />
       <Membership />
       <Location />
+      <SearchBooking />
     </>
   );
 }

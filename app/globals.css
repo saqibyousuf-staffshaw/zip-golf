@@ -148,6 +148,13 @@
     @apply font-poppins;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
+button{
+cursor: pointer !important;
+}
 
 .productCutBg {
   clip-path: polygon(0 0, 100% 53%, 100% 100%, 0% 100%);
