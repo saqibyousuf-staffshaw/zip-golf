@@ -9,48 +9,40 @@ export default function ScrollVideo(): JSX.Element | null {
   const [show, setShow] = useState(true);
   const hasPlayedRef = useRef(false);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+useEffect(() => {
+  const video = videoRef.current;
+  if (!video) return;
 
-    video.pause();
-    video.currentTime = 0;
+  video.currentTime = 0;
 
-    const lockScroll = () => {
-      document.body.style.overflow = "hidden";
-    };
+  const lockScroll = () => {
+    document.body.style.overflow = "hidden";
+  };
 
-    const unlockScroll = () => {
-      document.body.style.overflow = "";
-    };
+  const unlockScroll = () => {
+    document.body.style.overflow = "";
+  };
 
-    const handleVideoEnd = () => {
-      unlockScroll();
-      setShow(false);
-    };
+  const handleVideoEnd = () => {
+    unlockScroll();
+    setShow(false);
+  };
 
-    video.addEventListener("ended", handleVideoEnd);
+  video.addEventListener("ended", handleVideoEnd);
 
-    lockScroll(); // initial lock
+  lockScroll();
 
-    const handleWheel = () => {
-      if (hasPlayedRef.current) return;
+  // 👉 autoplay here
+  video.play().catch(() => {
+    // fallback if browser blocks autoplay
+    console.log("Autoplay blocked");
+  });
 
-      hasPlayedRef.current = true;
-
-      video.play().catch(() => {
-        // autoplay safety fallback
-      });
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: true });
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      video.removeEventListener("ended", handleVideoEnd);
-      unlockScroll();
-    };
-  }, []);
+  return () => {
+    video.removeEventListener("ended", handleVideoEnd);
+    unlockScroll();
+  };
+}, []);
 
   if (!show) return null;
 
@@ -68,11 +60,11 @@ export default function ScrollVideo(): JSX.Element | null {
     >
       <video
         ref={videoRef}
-        src="/image/zipper.webm"
+        src="/image/zipper-new-3.webm"
         muted
         playsInline
         preload="auto"
-        className="w-full h-full md:object-contain object-cover object-top"
+        className="w-full h-full md:object-cover object-cover object-top"
         // style={{
         //   width: "100%",
         //   height: "100%",

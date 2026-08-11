@@ -7,9 +7,9 @@ import localFont from "next/font/local";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 // @ts-ignore
-import ScrollGif from "@/components/zipper/zipper";
 import "aos/dist/aos.css";
 import AOSInit from "../components/AOSInit";
+import LoaderComp from "../components/loader/page";
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const poppins = Poppins({
@@ -85,9 +85,10 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", poppins.variable, "font-sans", inter.variable, gotham.variable, outfit.variable, grobold.variable)}
     >
       <body className="min-h-full flex flex-col">
-        <ScrollGif />
+        <LoaderComp />
         <AOSInit />
         <Navbar />
+        {children}
         <Footer />
       </body>
     </html>
